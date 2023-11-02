@@ -13,11 +13,10 @@ class testSudoku(unittest.TestCase):
             [0, 0, 0, 4, 1, 9, 0, 0, 5],
             [0, 0, 0, 0, 8, 0, 0, 7, 9]
         ]
-    
     game = sudokuGame(board)
     
     def testGetThreeByThreeArea(self):
-        self.assertEqual([5, 3, 0, 6, 0, 0, 0, 9, 8],self.game.getThreeByThreeArea(0,0))
+        self.assertEqual([5, 3, 0, 6, 0, 0, 0, 9, 8], self.game.getThreeByThreeArea(0,0))
 
 if __name__ == "__main__":
     unittest.main()
