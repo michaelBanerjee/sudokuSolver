@@ -1,11 +1,13 @@
 class sudokuGame:
 
-    def __init__(self, board):
+    def __init__(self, board:[]):
         self.board = board
 
     # def getSubgrid(self, x): # x must be between 0-8
         
     def getThreeByThreeArea(self, x:int, y:int): # x and y refer to the top left part of the area returned
+        if x > 6:
+            raise IndexError("getThreeByThreeArea() parameters are out of bounds")
         valuesInSubgrid = []
         for row in self.board[x:x+3]:
             for i in range(y,y+3):

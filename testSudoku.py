@@ -17,6 +17,10 @@ class testSudoku(unittest.TestCase):
     
     def testGetThreeByThreeArea(self):
         self.assertEqual([5, 3, 0, 6, 0, 0, 0, 9, 8], self.game.getThreeByThreeArea(0,0))
+        self.assertEqual([8, 0, 0, 0, 0, 6, 0, 8, 0], self.game.getThreeByThreeArea(2,2))
+        with self.assertRaises(IndexError):
+            self.game.getThreeByThreeArea(7,0)
+
 
 if __name__ == "__main__":
     unittest.main()
