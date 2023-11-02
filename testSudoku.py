@@ -17,12 +17,15 @@ class testSudoku(unittest.TestCase):
     
     def testGetThreeByThreeArea(self):
         self.assertEqual([5, 3, 0, 6, 0, 0, 0, 9, 8], self.game.getThreeByThreeArea(0,0))
-        self.assertEqual([8, 0, 0, 0, 0, 6, 0, 8, 0], self.game.getThreeByThreeArea(2,2))
+        self.assertEqual([2, 8, 0, 0, 0, 5, 0, 7, 9], self.game.getThreeByThreeArea(6,6))
         with self.assertRaises(IndexError): # tests exception handling
             self.game.getThreeByThreeArea(-1,0)
             self.game.getThreeByThreeArea(0,-1)
             self.game.getThreeByThreeArea(7,0)
             self.game.getThreeByThreeArea(0,7)
+    
+    def testGetSubgrid(self):
+        self.assertEquals
 
 
 

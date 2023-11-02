@@ -4,8 +4,9 @@ class sudokuGame:
         self.board = board
 
     # def getSubgrid(self, x): # x must be between 0-8
+
         
-    def getThreeByThreeArea(self, x:int, y:int): # x and y refer to the top left part of the area returned
+    def getThreeByThreeArea(self, x:int, y:int): # x and y are the top left of the area
         if 0 > x  or x >= 7 or 0 > y  or y >= 7:
             raise IndexError("getThreeByThreeArea() parameters are out of bounds")
         valuesInSubgrid = []
