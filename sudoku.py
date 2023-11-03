@@ -4,16 +4,18 @@ class sudokuGame:
         self.board = board
 
     def getSubgrid(self, x:int): # x must be between 0-8
-        subgrids = {
+        subgrids = { # subgrids are up to date since it's dictionary is in getSubgrid()
             0 : self.getThreeByThreeArea(0,0),
             1 : self.getThreeByThreeArea(3,0),
             2 : self.getThreeByThreeArea(6,0),
-            3 : self.getThreeByThreeArea(0,3)
-
+            3 : self.getThreeByThreeArea(0,3),
+            4 : self.getThreeByThreeArea(3,3),
+            5 : self.getThreeByThreeArea(6,3),
+            6 : self.getThreeByThreeArea(0,6),
+            7 : self.getThreeByThreeArea(3,6),
+            8 : self.getThreeByThreeArea(6,6)
         }
         return subgrids.get(x)
-
-
         
     def getThreeByThreeArea(self, x:int, y:int): # x and y are the top left of the area
         if 0 > x  or x >= 7 or 0 > y  or y >= 7:

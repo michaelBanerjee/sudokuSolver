@@ -29,11 +29,8 @@ class testSudoku(unittest.TestCase):
         self.assertEquals([0, 7, 0, 1, 9, 5, 0, 0, 0], self.game.getSubgrid(1))
         self.assertEqual([0, 0, 0, 0, 0, 0, 0, 6, 0], self.game.getSubgrid(2))
         self.assertEqual([8 ,0 ,0 ,4 ,0 ,0 ,7 ,0 ,0], self.game.getSubgrid(3))
-
-
-
-        
-
+        self.assertEqual([0 ,6 ,0 ,8 ,0 ,3 ,0 ,2 ,0], self.game.getSubgrid(4))
+        self.assertEqual([0 ,0 ,0 ,4 ,1 ,9 ,0 ,8 ,0], self.game.getSubgrid(7))
 
 
             
