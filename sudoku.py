@@ -3,6 +3,18 @@ class sudokuGame:
     def __init__(self, board:[]): # takes a 9x9 2D arrayList as board
         self.board = board
 
+    def isSectionComplete(self, list:[]):
+        if len(list) != 9:
+            raise IndexError("arrayList passed to isComplete() must have a length of 9")
+        
+        digit_set = set() #create a new set to store unique digits 
+
+        for num in list:
+            if 1 <= num <= 9: 
+                digit_set.add(num)
+    
+        return len(digit_set) == 9 
+
     def getRow(self, i:int):
         return self.board[i]
     

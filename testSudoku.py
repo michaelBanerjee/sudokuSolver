@@ -15,6 +15,13 @@ class testSudoku(unittest.TestCase):
         ]
     game = sudokuGame(board)
 
+    def testIsSectionComplete(self):
+        self.assertTrue(self.game.isSectionComplete([4, 2, 3, 1, 5, 6, 7, 8, 9]))
+        self.assertFalse(self.game.isSectionComplete([2, 2, 3, 1, 5, 6, 7, 8, 9]))
+
+        with self.assertRaises(IndexError):
+            self.game.isSectionComplete([0, 1, 2, 3])
+
     def testGetRow(self):
         self.assertEquals([8, 0, 0, 0, 6, 0, 0, 0, 3], self.game.getRow(3))
         self.assertEquals([0, 0, 0, 4, 1, 9, 0, 0, 5], self.game.getRow(7))
