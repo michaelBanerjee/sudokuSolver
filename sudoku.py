@@ -1,7 +1,16 @@
 class sudokuGame:
 
-    def __init__(self, board:[]):
+    def __init__(self, board:[]): # takes a 9x9 2D arrayList as board
         self.board = board
+
+    def getRow(self, i:int):
+        return self.board[i]
+    
+    def getColumn(self, i:int):
+        valuesInColumn = []
+        for row in self.board:
+            valuesInColumn.append(row[i])
+        return valuesInColumn
 
     def getSubgrid(self, x:int): # x must be between 0-8
         if x >= 0 and x <= 8:
@@ -28,7 +37,7 @@ class sudokuGame:
             for i in range(x,x+3):
                 valuesInSubgrid.append(row[i])
         return valuesInSubgrid
-    
+
     def printBoard(self): # TODO: add lines that seperate subgrids
         for row in self.board:
             print(row)

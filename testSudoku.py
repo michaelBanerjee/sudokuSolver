@@ -15,6 +15,13 @@ class testSudoku(unittest.TestCase):
         ]
     game = sudokuGame(board)
 
+    def testGetRow(self):
+        self.assertEquals([8, 0, 0, 0, 6, 0, 0, 0, 3], self.game.getRow(3))
+        self.assertEquals([0, 0, 0, 4, 1, 9, 0, 0, 5], self.game.getRow(7))
+
+    def testGetColumn(self):
+        self.assertEqual([0, 0, 8, 0, 0, 0, 0, 0, 0], self.game.getColumn(2))
+
     def testGetSubgrid(self):
         self.assertEquals([0, 7, 0, 1, 9, 5, 0, 0, 0], self.game.getSubgrid(1))
         self.assertEqual([0, 0, 0, 0, 0, 0, 0, 6, 0], self.game.getSubgrid(2))
